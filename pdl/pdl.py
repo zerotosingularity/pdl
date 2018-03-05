@@ -27,6 +27,8 @@ def pdl(url, data_dir, keep_download=False, overwrite_download=False, verbose=Fa
     zfile.write(resp.content)
     zfile.close()
 
+    echo("finished downloading", verbose)
+
     # unzip file
     # TODO add support for tar.gz
     echo("Unzipping...", verbose)
