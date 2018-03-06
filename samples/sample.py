@@ -3,7 +3,8 @@
 
 import pdl
 
-url = "http://files.grouplens.org/datasets/movielens/ml-latest-small.zip"
+#url = "http://files.grouplens.org/datasets/movielens/ml-latest-small.zip"
+url = "https://github.com/phayes/geoPHP/archive/1.2.tar.gz"
 download_dir = "data"
 
 pdl.pdl(url, download_dir, verbose=True)
