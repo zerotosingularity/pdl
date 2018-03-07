@@ -4,18 +4,19 @@ import zipfile
 import os
 import tarfile
 
+# TODO: constant naming in Python?
 zip_extension = ".zip"
 tar_extension = ".tar"
 tgz_extension = ".tgz"
 tar_gz_extension = ".tar.gz"
 
 
-def pdl(url, data_dir, keep_download=False, overwrite_download=False, verbose=False):
+def download(url, data_dir, keep_download=False, overwrite_download=False, verbose=False):
 
     # Get filename from url
     echo("Get the filename from the supplied url", verbose)
 
-    filename = url[url.rfind("/")+1:]
+    filename = get_filename(url)
 
     file_location = f"{data_dir}{filename}"
 
@@ -32,9 +33,10 @@ def pdl(url, data_dir, keep_download=False, overwrite_download=False, verbose=Fa
         # download file
         # TODO see if file exists and overwrite file
         echo(f"Downloading: {url}", verbose)
-        resp = requests.get(url, allow_redirects=True)
+        resp = requests.get(url, allow_redirects=True, stream=True)
 
         zfile = open(file_location, 'wb')
+        # TODO Puts the whole thing into memory, so need to look out for a better way to stream this to disk
         zfile.write(resp.content)
         zfile.close()
 
@@ -68,4 +70,10 @@ def echo(msg, on=True):
     if on:
         print(msg)
 
-# TODO set global var for verbose?
+
+def get_filename(url):
+    return url[url.rfind("/")+1:]
+
+
+def get_filelocation(data_dir, filename):
+    return f"{data_dir}{filename}"

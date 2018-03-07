@@ -1,1 +1,1 @@
-from pdl.pdl import pdl
+from pdl import pdl
