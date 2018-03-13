@@ -24,6 +24,8 @@ pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 ## Helper methods
 
 ```
+import pdl
+
 # Get the file name from a url
 pdl.get_filename(url)
 
