@@ -4,12 +4,13 @@ import http.server
 import threading
 
 import os
+import shutil
 
 from pdl import pdl
 
 PORT = 7972
 URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
-DATA_DIR = "tests/data/"
+DATA_DIR = "data/"
 
 # pylint: disable=C0103
 httpd = http.server.HTTPServer(
@@ -31,6 +32,8 @@ def teardown_module(module):
     """ Tear down module """
     print("tearing down module")
     stop_server()
+    print(os.getcwd())
+    shutil.rmtree(DATA_DIR)
 
 
 def setup_function(function):
