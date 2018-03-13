@@ -30,8 +30,10 @@ def setup_module(module):
 def teardown_module(module):
     # pylint: disable=W0612,W0613
     """ Tear down module """
+
     print("tearing down module")
     stop_server()
+
     print(os.getcwd())
     shutil.rmtree(DATA_DIR)
 
@@ -39,11 +41,13 @@ def teardown_module(module):
 def setup_function(function):
     # pylint: disable=W0612,W0613
     """ Setup function """
+
     print("setting up %s" % function)
 
 
 def test_pdl():
     """ Test for PDL """
+
     filename = pdl.get_filename(URL)
     file_location = pdl.get_filelocation(DATA_DIR, filename)
 
@@ -53,5 +57,6 @@ def test_pdl():
 
 
 def stop_server():
-    """ Stop server """
+    """ Stop HTTP server """
+
     httpd.shutdown()
