@@ -14,7 +14,9 @@ $ pip install pdl
 
 ```python
 
-import pdl
+from pdl import pdl
+
+
 
 # Download a file (zip, tar, tgz, tar.gz)
 pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False)
@@ -24,7 +26,7 @@ pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 ## Helper methods
 
 ```python
-import pdl
+from pdl import pdl
 
 # Get the file name from a url
 pdl.get_filename(url)
