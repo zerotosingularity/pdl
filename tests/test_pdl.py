@@ -11,6 +11,7 @@ from pdl import pdl
 PORT = 7972
 URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
 DATA_DIR = "data/"
+TEST_FILE = "1_hello_tensorflow.py"
 
 # pylint: disable=C0103
 httpd = http.server.HTTPServer(
@@ -54,6 +55,10 @@ def test_pdl():
     print(file_location)
     assert not os.path.exists(file_location)
     pdl.download(URL, DATA_DIR)
+
+    test_file_location = pdl.get_file_location(DATA_DIR, TEST_FILE)
+
+    assert os.path.exists(test_file_location)
 
 
 def stop_server():
