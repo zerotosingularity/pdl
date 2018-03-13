@@ -12,7 +12,7 @@ pip install pdl
 
 # How to use
 
-```python Download a file
+```python
 
 import pdl
 
@@ -23,7 +23,7 @@ pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 
 ## Helper methods
 
-```
+```python
 import pdl
 
 # Get the file name from a url
