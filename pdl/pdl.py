@@ -36,8 +36,8 @@ def movie_lens_latest():
     download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
 
 
-def google_street_view_house_numbers_full():
-    """ Download the Google Street View House numbers 
+def gsv_house_numbers_full():
+    """ Download the Google Street View House numbers
     more info: http://ufldl.stanford.edu/housenumbers/ """
     download("http://ufldl.stanford.edu/housenumbers/train.tar.gz")
     download("http://ufldl.stanford.edu/housenumbers/test.tar.gz")
