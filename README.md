@@ -33,3 +33,13 @@ pdl.get_filename(url)
 pdl.get_file_location(data_dir, filename)
 
 ```
+
+# Tests
+
+To run the tests from command line, simpy run:
+
+```bash
+$ pytest
+```
+
+For more details on pytest: [Getting started with pytest](https://docs.pytest.org/en/latest/getting-started.html).
