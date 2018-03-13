@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pdl",
-    version="0.5.0",
+    version="0.5.1",
     author="Zero to singularity",
     author_email="jan@zerotosingularity.com",
     url="https://github.com/zerotosingularity/pdl",
