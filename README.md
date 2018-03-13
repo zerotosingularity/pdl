@@ -16,6 +16,6 @@ pip install pdl
 
 import pdl
 
-pdl.pdl(url, data_dir, keep_download=False, overwrite_download=False, verbose=False)
+pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False)
 
 ```
