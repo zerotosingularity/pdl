@@ -98,6 +98,14 @@ def test_no_file_url():
         pdl_test_helper(URL_WITHOUT_FILE)
 
 
+@pytest.mark.skip(reason="only used for attribute error fixing")
+def test_movie_lens_latest():
+    try:
+        pdl.movie_lens_latest()
+    except:
+        pytest.fail("Unexpected error")
+
+
 def pdl_test_helper(url):
     """ Test for PDL """
 

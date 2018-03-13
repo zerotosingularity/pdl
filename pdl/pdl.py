@@ -16,6 +16,10 @@ FILE_FORMAT_ERROR = "ERROR: File format currently not supported."
 FILENAME_ERROR = "ERROR: Filename could not be found."
 
 
+def movie_lens_latest():
+    download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
+
+
 def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
     """ Download and extract the archive from the url """
 
