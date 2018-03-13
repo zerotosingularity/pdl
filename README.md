@@ -34,11 +34,17 @@ pdl.cifar_10()
 # Download cifar-100 (http://www.cs.utoronto.ca/~kriz/cifar.html)
 pdl.cifar_100()
 
+# Download the Google Street View House (GSVH) numbers (http://ufldl.stanford.edu/housenumbers/)
+pdl.gsvh_cropped()
+
+# Download the Google Street View House (GSVH) numbers (http://ufldl.stanford.edu/housenumbers/)
+pdl.gsvh_full()
+
+# Download MNIST (http://yann.lecun.com/exdb/mnist/)
+pdl.mnist()
+
 # Download movie lens dataset(http://files.grouplens.org/datasets/movielens/)
 pdl.movie_lens_latest()
-
-# Download the Google Street View House numbers (http://ufldl.stanford.edu/housenumbers/)
-pdl.gsv_house_numbers_full()
 ```
 
 ## Helper methods
