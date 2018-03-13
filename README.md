@@ -7,7 +7,7 @@ High level library for downloading and unarchiving files.
 # Install
 
 ```bash
-pip install pdl
+$ pip install pdl
 ```
 
 # How to use
