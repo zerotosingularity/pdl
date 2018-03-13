@@ -5,6 +5,7 @@ import threading
 
 import os
 import shutil
+import pytest
 
 from pdl import pdl
 
@@ -14,6 +15,10 @@ ZIP_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
 TAR_GZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar.gz"
 TAR_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar"
 TGZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tgz"
+
+EMPTY_URL = ""
+WRONG_URL_EXTENSION = "http://localhost:{PORT}/wrong_extension.bad"
+URL_WITHOUT_FILE = "http://localhost:{PORT}/"
 
 DATA_DIR = "data/"
 TEST_FILE = "1_hello_tensorflow.py"
@@ -73,6 +78,24 @@ def test_tgz_download():
     """ Test .tgz download """
 
     pdl_test_helper(TGZ_URL)
+
+
+def test_empty_url():
+    """ Test an empty url """
+    with pytest.raises(Exception):
+        pdl_test_helper(EMPTY_URL)
+
+
+def test_wrong_url():
+    """ Test an unsupported extension """
+    with pytest.raises(Exception):
+        pdl_test_helper(WRONG_URL_EXTENSION)
+
+
+def test_no_file_url():
+    """ Test a url without a file """
+    with pytest.raises(Exception):
+        pdl_test_helper(URL_WITHOUT_FILE)
 
 
 def pdl_test_helper(url):
