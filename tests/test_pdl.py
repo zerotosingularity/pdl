@@ -100,9 +100,10 @@ def test_no_file_url():
 
 @pytest.mark.skip(reason="only used for attribute error fixing")
 def test_movie_lens_latest():
+    """ Skipped test for movie lens; advised use for debugging only """
     try:
         pdl.movie_lens_latest()
-    except:
+    except AttributeError:
         pytest.fail("Unexpected error")
 
 
