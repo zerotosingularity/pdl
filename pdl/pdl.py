@@ -11,7 +11,7 @@ tgz_extension = ".tgz"
 tar_gz_extension = ".tar.gz"
 
 
-def download(url, data_dir, keep_download=False, overwrite_download=False, verbose=False):
+def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
 
     # Get filename from url
     echo("Get the filename from the supplied url", verbose)
@@ -19,6 +19,7 @@ def download(url, data_dir, keep_download=False, overwrite_download=False, verbo
     filename = get_filename(url)
 
     file_location = f"{data_dir}{filename}"
+    print(file_location)
 
     # TODO handle execeptions
     # - no url supplied
@@ -30,12 +31,16 @@ def download(url, data_dir, keep_download=False, overwrite_download=False, verbo
         echo(
             f"The requested file: {filename} already exists in location: {file_location}", verbose)
     else:
+        print(file_location)
         # download file
         # TODO see if file exists and overwrite file
         echo(f"Downloading: {url}", verbose)
         resp = requests.get(url, allow_redirects=True, stream=True)
 
-        zfile = open(file_location, 'wb')
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
+
+        zfile = open(file_location, 'wb+')
         # TODO Puts the whole thing into memory, so need to look out for a better way to stream this to disk
         zfile.write(resp.content)
         zfile.close()
@@ -44,7 +49,6 @@ def download(url, data_dir, keep_download=False, overwrite_download=False, verbo
 
     if filename.endswith(zip_extension):
         # unzip file
-        # TODO add support for tar.gz
         echo("Extracting zip file.", verbose)
         zip = zipfile.ZipFile(file_location, 'r')
         zip.extractall(data_dir)

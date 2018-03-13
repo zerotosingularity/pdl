@@ -1,48 +1,54 @@
+""" Tests for PDL """
+
 import http.server
-import socketserver
-from multiprocessing import Process
-from pdl import pdl
+import threading
+
 import os
 
-PORT = 7972
+from pdl import pdl
 
-p = None
-url = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
-data_dir = "data"
+PORT = 7972
+URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
+DATA_DIR = "tests/data/"
+
+# pylint: disable=C0103
+httpd = http.server.HTTPServer(
+    ('', PORT), http.server.SimpleHTTPRequestHandler)
+# pylint: disable=C0103
+thread = threading.Thread(target=httpd.serve_forever)
 
 
 def setup_module(module):
+    # pylint: disable=W0612,W0613
+    """ Setup function for test framework """
+
     print("setting up module")
-    global p
-    p = Process(target=start_server)
-    p.start()
+    thread.start()
 
 
 def teardown_module(module):
+    # pylint: disable=W0612,W0613
+    """ Tear down module """
     print("tearing down module")
     stop_server()
 
 
 def setup_function(function):
+    # pylint: disable=W0612,W0613
+    """ Setup function """
     print("setting up %s" % function)
 
 
 def test_pdl():
-    filename = pdl.get_filename(url)
-    file_location = pdl.get_filelocation(data_dir, filename)
+    """ Test for PDL """
+    filename = pdl.get_filename(URL)
+    file_location = pdl.get_filelocation(DATA_DIR, filename)
 
+    print(file_location)
     assert not os.path.exists(file_location)
-    pdl.download(url, data_dir, keep_download=True)
-
-
-def start_server():
-    Handler = http.server.SimpleHTTPRequestHandler
-
-    httpd = socketserver.TCPServer(("", PORT), Handler)
-    httpd.serve_forever()
+    pdl.download(URL, DATA_DIR)
 
 
 def stop_server():
-    print(p.pid)
-    p.terminate()
-    # assert False
+    """ Stop server """
+    httpd.shutdown()
