@@ -9,7 +9,12 @@ import shutil
 from pdl import pdl
 
 PORT = 7972
-URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
+
+ZIP_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
+TAR_GZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar.gz"
+TAR_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar"
+TGZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tgz"
+
 DATA_DIR = "data/"
 TEST_FILE = "1_hello_tensorflow.py"
 
@@ -46,19 +51,44 @@ def setup_function(function):
     print("setting up %s" % function)
 
 
-def test_pdl():
+def test_zip_download():
+    """ Test zip downlaod """
+
+    pdl_helper(ZIP_URL)
+
+
+def test_tar_gz_download():
+    """ Test .tar.gz download """
+
+    pdl_helper(TAR_GZ_URL)
+
+
+def test_tar_download():
+    """ Test tar download """
+
+    pdl_helper(TAR_URL)
+
+
+def test_tgz_download():
+    """ Test .tgz download """
+
+    pdl_helper(TGZ_URL)
+
+
+def pdl_helper(url):
     """ Test for PDL """
 
-    filename = pdl.get_filename(URL)
+    filename = pdl.get_filename(url)
     file_location = pdl.get_file_location(DATA_DIR, filename)
 
     print(file_location)
     assert not os.path.exists(file_location)
-    pdl.download(URL, DATA_DIR)
+    pdl.download(url, DATA_DIR)
 
     test_file_location = pdl.get_file_location(DATA_DIR, TEST_FILE)
 
     assert os.path.exists(test_file_location)
+    assert not os.path.exists(file_location)
 
 
 def stop_server():
