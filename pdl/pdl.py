@@ -79,5 +79,5 @@ def get_filename(url):
     return url[url.rfind("/")+1:]
 
 
-def get_filelocation(data_dir, filename):
+def get_file_location(data_dir, filename):
     return f"{data_dir}{filename}"

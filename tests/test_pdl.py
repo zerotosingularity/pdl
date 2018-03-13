@@ -49,7 +49,7 @@ def test_pdl():
     """ Test for PDL """
 
     filename = pdl.get_filename(URL)
-    file_location = pdl.get_filelocation(DATA_DIR, filename)
+    file_location = pdl.get_file_location(DATA_DIR, filename)
 
     print(file_location)
     assert not os.path.exists(file_location)
