@@ -15,9 +15,21 @@ EMPTY_URL_ERROR = "ERROR: url parameter should not be empty."
 FILE_FORMAT_ERROR = "ERROR: File format currently not supported."
 FILENAME_ERROR = "ERROR: Filename could not be found."
 
+### Dataset helpers (alphabetically) ###
+
+
+def cifar_10():
+    """ Download the cifar-10 dataset; more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
+    download("http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz")
+
 
 def movie_lens_latest():
+    """ Download the movie lens dataset;
+     more info: http://files.grouplens.org/datasets/movielens/ """
     download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
+
+
+### PDL Core ###
 
 
 def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
@@ -86,6 +98,9 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
         os.remove(file_location)
     else:
         echo("Keeping the downloaded file.", verbose)
+
+
+### Helper methods ###
 
 
 def echo(msg, debug=True):
