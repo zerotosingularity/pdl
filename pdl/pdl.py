@@ -25,23 +25,38 @@ def cifar_10():
 
 
 def cifar_100():
-    """ Download the CIFAR-100 dataset
-    more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
+    """ http://www.cs.utoronto.ca/~kriz/cifar.html """
     download("http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz")
 
 
-def movie_lens_latest():
-    """ Download the movie lens dataset
-    more info: http://files.grouplens.org/datasets/movielens/ """
-    download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
-
-
-def gsv_house_numbers_full():
+def gsvh_full():
     """ Download the Google Street View House numbers
     more info: http://ufldl.stanford.edu/housenumbers/ """
     download("http://ufldl.stanford.edu/housenumbers/train.tar.gz")
     download("http://ufldl.stanford.edu/housenumbers/test.tar.gz")
     download("http://ufldl.stanford.edu/housenumbers/extra.tar.gz")
+
+
+def gsvh_cropped():
+    """ Download the Google Street View House numbers
+    more info: http://ufldl.stanford.edu/housenumbers/ """
+    download("http://ufldl.stanford.edu/housenumbers/train_32x32.mat")
+    download("http://ufldl.stanford.edu/housenumbers/test_32x32.mat")
+    download("http://ufldl.stanford.edu/housenumbers/extra_32x32.mat")
+
+
+def mnist():
+    """ http://yann.lecun.com/exdb/mnist/ """
+    download("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz")
+    download("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz")
+    download("http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz")
+    download("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz")
+
+
+def movie_lens_latest():
+    """ Download the movie lens dataset
+    more info: http: // files.grouplens.org/datasets/movielens / """
+    download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
 
 
 ### PDL Core ###
