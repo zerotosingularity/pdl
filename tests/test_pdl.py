@@ -54,28 +54,28 @@ def setup_function(function):
 def test_zip_download():
     """ Test zip downlaod """
 
-    pdl_helper(ZIP_URL)
+    pdl_test_helper(ZIP_URL)
 
 
 def test_tar_gz_download():
     """ Test .tar.gz download """
 
-    pdl_helper(TAR_GZ_URL)
+    pdl_test_helper(TAR_GZ_URL)
 
 
 def test_tar_download():
     """ Test tar download """
 
-    pdl_helper(TAR_URL)
+    pdl_test_helper(TAR_URL)
 
 
 def test_tgz_download():
     """ Test .tgz download """
 
-    pdl_helper(TGZ_URL)
+    pdl_test_helper(TGZ_URL)
 
 
-def pdl_helper(url):
+def pdl_test_helper(url):
     """ Test for PDL """
 
     filename = pdl.get_filename(url)
