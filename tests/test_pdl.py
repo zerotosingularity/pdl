@@ -9,6 +9,10 @@ import pytest
 
 from pdl import pdl
 
+DATA_DIR = "data/"
+TEST_FILE = "1_hello_tensorflow.py"
+MAT_FILE = "data.mat"
+
 PORT = 7972
 URL = f"http://localhost:{PORT}"
 
@@ -16,12 +20,10 @@ ZIP_URL = f"{URL}/tests/fixtures/hello_tensorflow.zip"
 TAR_GZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar.gz"
 TAR_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar"
 TGZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tgz"
+NON_ARCHIVE_URL = f"{URL}/tests/fixtures/{MAT_FILE}"
 
 EMPTY_URL = ""
 URL_WITHOUT_FILE = "{URL}/"
-
-DATA_DIR = "data/"
-TEST_FILE = "1_hello_tensorflow.py"
 
 # pylint: disable=C0103
 httpd = http.server.HTTPServer(
@@ -92,6 +94,11 @@ def test_no_file_url():
         pdl_test_helper(URL_WITHOUT_FILE)
 
 
+def test_no_archive_url():
+    """ Test a non-archive url """
+    pdl_test_helper(NON_ARCHIVE_URL, False)
+
+
 @pytest.mark.skip(reason="only used for attribute error fixing")
 def test_movie_lens_latest():
     """ Skipped test for movie lens; advised use for debugging only """
@@ -101,7 +108,7 @@ def test_movie_lens_latest():
         pytest.fail("Unexpected error")
 
 
-def pdl_test_helper(url):
+def pdl_test_helper(url, archive=True):
     """ Test for PDL """
 
     filename = pdl.get_filename(url)
@@ -114,7 +121,9 @@ def pdl_test_helper(url):
     test_file_location = pdl.get_file_location(DATA_DIR, TEST_FILE)
 
     assert os.path.exists(test_file_location)
-    assert not os.path.exists(file_location)
+
+    if archive:
+        assert not os.path.exists(file_location)
 
 
 def stop_server():

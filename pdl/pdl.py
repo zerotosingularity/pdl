@@ -65,6 +65,8 @@ def movie_lens_latest():
 def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
     """ Download and extract the archive from the url """
 
+    is_archive = True
+
     if url == "":
         raise Exception(EMPTY_URL_ERROR)
 
@@ -114,10 +116,11 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
         tar.extractall(data_dir)
         tar.close()
     else:
-        echo(f"No support for {filename} extraction.")
+        is_archive = False
+        echo(f"Not extracting: {filename}.")
 
     # Keep or remove downloaded file
-    if not keep_download:
+    if not keep_download and is_archive:
         echo(f"Removing file: {filename}", verbose)
         os.remove(file_location)
     else:
