@@ -10,15 +10,15 @@ import pytest
 from pdl import pdl
 
 PORT = 7972
+URL = f"http://localhost:{PORT}"
 
-ZIP_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.zip"
-TAR_GZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar.gz"
-TAR_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tar"
-TGZ_URL = f"http://localhost:{PORT}/tests/fixtures/hello_tensorflow.tgz"
+ZIP_URL = f"{URL}/tests/fixtures/hello_tensorflow.zip"
+TAR_GZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar.gz"
+TAR_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar"
+TGZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tgz"
 
 EMPTY_URL = ""
-WRONG_URL_EXTENSION = "http://localhost:{PORT}/wrong_extension.bad"
-URL_WITHOUT_FILE = "http://localhost:{PORT}/"
+URL_WITHOUT_FILE = "{URL}/"
 
 DATA_DIR = "data/"
 TEST_FILE = "1_hello_tensorflow.py"
