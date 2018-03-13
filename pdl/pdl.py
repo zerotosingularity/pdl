@@ -19,14 +19,29 @@ FILENAME_ERROR = "ERROR: Filename could not be found."
 
 
 def cifar_10():
-    """ Download the cifar-10 dataset; more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
+    """ Download the CIFAR-10 dataset
+    more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
     download("http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz")
 
 
+def cifar_100():
+    """ Download the CIFAR-100 dataset
+    more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
+    download("http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz")
+
+
 def movie_lens_latest():
-    """ Download the movie lens dataset;
-     more info: http://files.grouplens.org/datasets/movielens/ """
+    """ Download the movie lens dataset
+    more info: http://files.grouplens.org/datasets/movielens/ """
     download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
+
+
+def google_street_view_house_numbers_full():
+    """ Download the Google Street View House numbers 
+    more info: http://ufldl.stanford.edu/housenumbers/ """
+    download("http://ufldl.stanford.edu/housenumbers/train.tar.gz")
+    download("http://ufldl.stanford.edu/housenumbers/test.tar.gz")
+    download("http://ufldl.stanford.edu/housenumbers/extra.tar.gz")
 
 
 ### PDL Core ###
@@ -34,12 +49,6 @@ def movie_lens_latest():
 
 def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
     """ Download and extract the archive from the url """
-
-    if not(url.endswith(ZIP_EXTENSION)
-           or url.endswith(TAR_EXTENSION)
-           or url.endswith(TGZ_EXTENSION)
-           or url.endswith(TAR_GZ_EXTENSION)):
-        raise Exception(FILE_FORMAT_ERROR)
 
     if url == "":
         raise Exception(EMPTY_URL_ERROR)

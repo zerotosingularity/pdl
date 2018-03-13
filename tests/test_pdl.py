@@ -86,12 +86,6 @@ def test_empty_url():
         pdl_test_helper(EMPTY_URL)
 
 
-def test_wrong_url():
-    """ Test an unsupported extension """
-    with pytest.raises(Exception):
-        pdl_test_helper(WRONG_URL_EXTENSION)
-
-
 def test_no_file_url():
     """ Test a url without a file """
     with pytest.raises(Exception):
