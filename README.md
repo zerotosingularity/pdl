@@ -38,7 +38,7 @@ pdl.cifar_100()
 pdl.movie_lens_latest()
 
 # Download the Google Street View House numbers (http://ufldl.stanford.edu/housenumbers/)
-pdl.google_street_view_house_numbers_full()
+pdl.gsv_house_numbers_full()
 ```
 
 ## Helper methods
