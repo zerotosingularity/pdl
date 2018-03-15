@@ -1,4 +1,4 @@
-# Disclaimer: alpha - preview
+# Disclaimer: alpha version
 
 # PDL - Python Download Library
 
