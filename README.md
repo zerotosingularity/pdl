@@ -4,6 +4,8 @@
 
 High level library for downloading and unarchiving files.
 
+[Blog Post]()
+
 # Install
 
 ```bash
@@ -25,11 +27,21 @@ pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 
 ## Dataset helpers
 
+Below you can find the current supported datasets with their simplest invocation. Of course, you can still specify the parameters from the core: data_dir, keep_download, overwrite_download, verbose:
+
 ```python
 from pdl import pdl
 
 # Download cifar-10 (http://www.cs.utoronto.ca/~kriz/cifar.html)
 pdl.cifar_10()
+
+# Example of more control, which can also be applied to the datasets below:
+pdl.cifar_10(data_dir="my-data-dir/")
+pdl.cifar_10(data_dir="my-data-dir/", verbose=True)
+pdl.cifar_10(data_dir="my-data-dir/", overwrite_download=True, verbose=True)
+pdl.cifar_10(data_dir="my-data-dir/", keep_download=True, verbose=True)
+pdl.cifar_10(data_dir="my-data-dir/", keep_download=True, overwrite_download=True, verbose=True)
+pdl.cifar_10("my-data-dir/", True, True, True)
 
 # Download cifar-100 (http://www.cs.utoronto.ca/~kriz/cifar.html)
 pdl.cifar_100()
