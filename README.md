@@ -1,10 +1,10 @@
-# Disclaimer: alpha - preview
+# Disclaimer: alpha version
 
 # PDL - Python Download Library
 
 High level library for downloading and unarchiving files.
 
-[Blog Post]()
+[Blog Post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
 # Install
 
