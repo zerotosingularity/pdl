@@ -107,10 +107,10 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 
         os.makedirs(data_dir, exist_ok=True)
 
-        zfile = open(file_location, 'wb')
+        local_file = open(file_location, 'wb')
 
-        zfile.write(resp.content)
-        zfile.close()
+        local_file.write(resp.content)
+        local_file.close()
 
         echo("finished downloading", verbose)
 
