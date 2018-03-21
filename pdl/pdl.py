@@ -105,8 +105,7 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
         echo(f"Downloading: {url}", verbose)
         resp = requests.get(url, allow_redirects=True, stream=True)
 
-        if not os.path.exists(data_dir):
-            os.makedirs(data_dir)
+        os.makedirs(data_dir, exist_ok=True)
 
         zfile = open(file_location, 'wb')
 
