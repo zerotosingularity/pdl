@@ -2,7 +2,11 @@
 
 # PDL - Python Download Library
 
-High level library for downloading and unarchiving files.
+High level library for:
+* download and unarchiving,
+* discovering,
+
+datasets.
 
 [Blog Post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
