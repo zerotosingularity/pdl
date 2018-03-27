@@ -2,7 +2,11 @@
 
 # PDL - Python Download Library
 
-High level library for downloading and unarchiving files.
+High level library for:
+* download and unarchiving,
+* discovering,
+
+datasets.
 
 [Blog Post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
@@ -27,7 +31,7 @@ pdl.download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
 
 ## Dataset helpers
 
-Below you can find the current supported datasets with their simplest invocation. Of course, you can still specify the parameters from the core: data_dir, keep_download, overwrite_download, verbose:
+Below you can find the current supported datasets with their simplest invocation. Of course, you can still specify the parameters from the core: data_dir, keep_download, overwrite_download, verbose. Additionally, you can use info_only to print info about the dataset.
 
 ```python
 from pdl import pdl
@@ -40,7 +44,7 @@ pdl.cifar_10(data_dir="my-data-dir/")
 pdl.cifar_10(data_dir="my-data-dir/", verbose=True)
 pdl.cifar_10(data_dir="my-data-dir/", overwrite_download=True, verbose=True)
 pdl.cifar_10(data_dir="my-data-dir/", keep_download=True, verbose=True)
-pdl.cifar_10(data_dir="my-data-dir/", keep_download=True, overwrite_download=True, verbose=True)
+pdl.cifar_10(data_dir="my-data-dir/", keep_download=True, overwrite_download=True, verbose=True, info_only=False)
 pdl.cifar_10("my-data-dir/", True, True, True)
 
 # Download cifar-100 (http://www.cs.utoronto.ca/~kriz/cifar.html)
