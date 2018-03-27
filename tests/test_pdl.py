@@ -14,16 +14,17 @@ TEST_FILE = "1_hello_tensorflow.py"
 MAT_FILE = "data.mat"
 
 PORT = 7972
-URL = f"http://localhost:{PORT}"
+URL = "http://localhost:{port}".format(port=PORT)
 
-ZIP_URL = f"{URL}/tests/fixtures/hello_tensorflow.zip"
-TAR_GZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar.gz"
-TAR_URL = f"{URL}/tests/fixtures/hello_tensorflow.tar"
-TGZ_URL = f"{URL}/tests/fixtures/hello_tensorflow.tgz"
-NON_ARCHIVE_URL = f"{URL}/tests/fixtures/{MAT_FILE}"
+ZIP_URL = "{url}/tests/fixtures/hello_tensorflow.zip".format(url=URL)
+TAR_GZ_URL = "{url}/tests/fixtures/hello_tensorflow.tar.gz".format(url=URL)
+TAR_URL = "{url}/tests/fixtures/hello_tensorflow.tar".format(url=URL)
+TGZ_URL = "{url}/tests/fixtures/hello_tensorflow.tgz".format(url=URL)
+NON_ARCHIVE_URL = "{url}/tests/fixtures/{mat_file}".format(
+    url=URL, mat_file=MAT_FILE)
 
 EMPTY_URL = ""
-URL_WITHOUT_FILE = "{URL}/"
+URL_WITHOUT_FILE = URL + "/"
 
 # pylint: disable=C0103
 httpd = http.server.HTTPServer(

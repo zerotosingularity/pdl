@@ -132,12 +132,13 @@ def download(url, data_dir="data/", keep_download=False,
 
     if os.path.exists(file_location) and not overwrite_download:
         echo(
-            f"The requested file: {filename} already exists in location: {file_location}. \
-            Use: 'overwrite_download=True' to force overwrite", True)
+            "The requested file: {filename} already exists in location: {file_location}. \
+            Use: 'overwrite_download=True' to force overwrite"
+            .format(filename=filename, file_location=file_location), True)
     else:
         echo(file_location, verbose)
 
-        echo(f"Downloading: {url}", verbose)
+        echo("Downloading: {url}".format(url=url), verbose)
         resp = requests.get(url, allow_redirects=True, stream=True)
 
         os.makedirs(data_dir, exist_ok=True)
@@ -165,11 +166,11 @@ def download(url, data_dir="data/", keep_download=False,
         tar.close()
     else:
         is_archive = False
-        echo(f"Not extracting: {filename}.")
+        echo("Not extracting: {filename}.".format(filename=filename))
 
     # Keep or remove downloaded file
     if not keep_download and is_archive:
-        echo(f"Removing file: {filename}", verbose)
+        echo("Removing file: {filename}".format(filename=filename), verbose)
         os.remove(file_location)
     else:
         echo("Keeping the downloaded file.", verbose)
@@ -191,4 +192,4 @@ def get_filename(url):
 
 def get_file_location(data_dir, filename):
     """ Concat data_dir and filename """
-    return f"{data_dir}{filename}"
+    return data_dir + filename
