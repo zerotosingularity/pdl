@@ -15,68 +15,103 @@ EMPTY_URL_ERROR = "ERROR: url parameter should not be empty."
 FILE_FORMAT_ERROR = "ERROR: File format currently not supported."
 FILENAME_ERROR = "ERROR: Filename could not be found."
 
-### Dataset helpers (alphabetically) ###
+# Dataset helpers (alphabetically) #
 
 
-def cifar_10(data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def cifar_10(data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False, info_only=False):
     """ Download the CIFAR-10 dataset
-    more info: http://www.cs.utoronto.ca/~kriz/cifar.html """
-    download("http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz",
-             data_dir, keep_download, overwrite_download, verbose)
+    more info: http: // www.cs.utoronto.ca / ~kriz/cifar.html"""
+    if info_only:
+        print(""" Download the CIFAR-10 dataset
+                more info: http: // www.cs.utoronto.ca / ~kriz/cifar.html""")
+    else:
+        download("http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
 
 
-def cifar_100(data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def cifar_100(data_dir="data/", keep_download=False,
+              overwrite_download=False, verbose=False, info_only=False):
     """ http://www.cs.utoronto.ca/~kriz/cifar.html """
-    download("http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz",
-             data_dir, keep_download, overwrite_download, verbose)
+
+    if info_only:
+        print(""" http://www.cs.utoronto.ca/~kriz/cifar.html """)
+    else:
+        download("http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
 
 
-def gsvh_full(data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def gsvh_full(data_dir="data/", keep_download=False,
+              overwrite_download=False, verbose=False, info_only=False):
     """ Download the Google Street View House numbers
-    more info: http://ufldl.stanford.edu/housenumbers/ """
-    download("http://ufldl.stanford.edu/housenumbers/train.tar.gz",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://ufldl.stanford.edu/housenumbers/test.tar.gz",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://ufldl.stanford.edu/housenumbers/extra.tar.gz",
-             data_dir, keep_download, overwrite_download, verbose)
+    more info: http: // ufldl.stanford.edu / housenumbers / """
+
+    if info_only:
+        print(""" Download the Google Street View House numbers
+             more info: http: // ufldl.stanford.edu / housenumbers / """)
+    else:
+        download("http://ufldl.stanford.edu/housenumbers/train.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://ufldl.stanford.edu/housenumbers/test.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://ufldl.stanford.edu/housenumbers/extra.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
 
 
-def gsvh_cropped(data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def gsvh_cropped(data_dir="data/", keep_download=False,
+                 overwrite_download=False, verbose=False, info_only=False):
     """ Download the Google Street View House numbers
-    more info: http://ufldl.stanford.edu/housenumbers/ """
-    download("http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
-             data_dir, keep_download, overwrite_download, verbose)
+    more info: http: // ufldl.stanford.edu / housenumbers / """
+
+    if info_only:
+        print(""" Download the Google Street View House numbers
+            more info: http: // ufldl.stanford.edu / housenumbers / """)
+    else:
+        download("http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
+                 data_dir, keep_download, overwrite_download, verbose)
 
 
-def mnist(data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def mnist(data_dir="data/", keep_download=False,
+          overwrite_download=False, verbose=False, info_only=False):
     """ http://yann.lecun.com/exdb/mnist/ """
-    download("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz",
-             data_dir, keep_download, overwrite_download, verbose)
-    download("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
-             data_dir, keep_download, overwrite_download, verbose)
+
+    if info_only:
+        print(""" http://yann.lecun.com/exdb/mnist/ """)
+    else:
+        download("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
 
 
 def movie_lens_latest(data_dir="data/", keep_download=False,
-                      overwrite_download=False, verbose=False):
+                      overwrite_download=False, verbose=False,
+                      info_only=False):
     """ Download the movie lens dataset
-    more info: http: // files.grouplens.org/datasets/movielens / """
-    download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip",
-             data_dir, keep_download, overwrite_download, verbose)
+    more info: http: // files.grouplens.org / datasets / movielens / """
+
+    if info_only:
+        print(""" http://yann.lecun.com/exdb/mnist/ """)
+    else:
+        download(
+            "http://files.grouplens.org/datasets/movielens/\
+            ml-latest-small.zip",
+            data_dir, keep_download, overwrite_download, verbose)
 
 
-### PDL Core ###
+# PDL Core #
 
 
-def download(url, data_dir="data/", keep_download=False, overwrite_download=False, verbose=False):
+def download(url, data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False):
     """ Download and extract the archive from the url """
 
     is_archive = True
@@ -120,9 +155,9 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
         zipf.extractall(data_dir)
         zipf.close()
 
-    elif (filename.endswith(TAR_EXTENSION)
-          or filename.endswith(TAR_GZ_EXTENSION)
-          or filename.endswith(TGZ_EXTENSION)):
+    elif(filename.endswith(TAR_EXTENSION) or
+         filename.endswith(TAR_GZ_EXTENSION) or
+         filename.endswith(TGZ_EXTENSION)):
         echo("Extracting tar file.", verbose)
 
         tar = tarfile.open(file_location, 'r')
@@ -140,7 +175,7 @@ def download(url, data_dir="data/", keep_download=False, overwrite_download=Fals
         echo("Keeping the downloaded file.", verbose)
 
 
-### Helper methods ###
+# Helper methods #
 
 
 def echo(msg, debug=True):

@@ -51,13 +51,6 @@ def teardown_module(module):
     shutil.rmtree(DATA_DIR)
 
 
-def setup_function(function):
-    # pylint: disable=W0612,W0613
-    """ Setup function """
-
-    print("setting up %s" % function)
-
-
 def test_zip_download():
     """ Test zip downlaod """
 
