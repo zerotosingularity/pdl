@@ -18,10 +18,13 @@ for url in urls:
         matching = [u for u in url["tags"] if "pdl" in u["title"]]
 
         for m in matching:
-            if m["title"] not in tag_list:
-                tag_list[m["title"]] = []
+            # get title and strip "pdl-"
+            title = m["title"][4:]
 
-            tag_list[m["title"]].append(url)
+            if title not in tag_list:
+                tag_list[title] = []
+
+            tag_list[title].append(url)
 
 print("-- taglist --")
 print(tag_list)
