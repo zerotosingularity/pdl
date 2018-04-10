@@ -13,7 +13,7 @@ PDL_END_DELIMITER = "# PDL Core #"
 def generate_method(paramaters):
     dataset_download_template = Template(
         'def $method_name(data_dir="data/", keep_download=False,\n\
-                    overwrite_download=False, verbose=False, info_only=False): \n\
+                    overwrite_download=False, verbose=False, info_only=False):\n\
     """ Download the $method_name dataset\n\
     more info: $page_url"""\n\
     if info_only:\n\
