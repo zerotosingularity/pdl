@@ -110,7 +110,7 @@ pdl_generated = start + PDL_START_DELIMITER + "\n"
 pdl_generated += methods
 pdl_generated += DOUBLE_NEW_LINE + PDL_END_DELIMITER + end
 
-new_pdl = open("../pdl/pdl_generated.py", "w")
+new_pdl = open("../pdl/pdl.py", "w")
 new_pdl.write(pdl_generated)
 
 
