@@ -66,17 +66,19 @@ for url in urls:
 
             tag_list[title].append(url)
 
+sorted_tag_list = {}
+
+for key in sorted(tag_list):
+    sorted_tag_list[key] = tag_list[key]
+
 methods = ""
 
 # Generate methods based on tags
 
-for tag in tag_list:
-    # print('tags')
-    # print(tag)
-    # print(tag_list[tag])
+for tag in sorted_tag_list:
     method = DOUBLE_NEW_LINE
     newMethod = True
-    for url in tag_list[tag]:
+    for url in sorted_tag_list[tag]:
         page_url = url["page_url"]
         url = url["url"]
         if newMethod:
