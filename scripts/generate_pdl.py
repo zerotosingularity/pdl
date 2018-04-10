@@ -4,11 +4,50 @@ import json
 import http
 from string import Template
 
+
+DOUBLE_NEW_LINE = "\n\n"
+PDL_START_DELIMITER = "# Dataset helpers (alphabetically) #"
+PDL_END_DELIMITER = "# PDL Core #"
+
+
+def generate_method(paramaters):
+    dataset_download_template = Template(
+        'def $method_name(data_dir="data/", keep_download=False,\n\
+                    overwrite_download=False, verbose=False, info_only=False): \n\
+    """ Download the $method_name dataset\n\
+    more info: $page_url"""\n\
+    if info_only:\n\
+        print(""" Download the $method_name dataset\n \
+                more info: $page_url""")\n\
+    else:\n\
+        download("$url",\n\
+                data_dir, keep_download, overwrite_download, verbose)\n')
+
+    generated_method = dataset_download_template.substitute(parameters)
+    return generated_method
+
+
+def append_download_url(parameters, method=None):
+    append_download_url_template = Template(
+        '        download("$url",\n\
+                data_dir, keep_download, overwrite_download, verbose)\n')
+
+    generated_code = append_download_url_template.substitute(parameters)
+
+    if method is not None:
+        method += generated_code
+        return method
+    else:
+        return generated_code
+
+
 r = requests.get("http://localhost:5000/api/dlurl")
 
 if(r.status_code != requests.codes.ok):
     print("PDL: Url fetching failed, exiting...")
     exit(1)
+
+# Construct list of tags
 
 tag_list = {}
 
@@ -27,41 +66,51 @@ for url in urls:
 
             tag_list[title].append(url)
 
-dataset_download_template = Template(
-    'def $method_name(data_dir="data/", keep_download=False,\n\
-                    overwrite_download=False, verbose=False, info_only=False): \n\
-    """ Download the $method_name dataset\n\
-    more info: $page_url"""\n\
-    if info_only:\n\
-        print(""" Download the $method_name dataset\n \
-                more info: $page_url""")\n\
-    else:\n\
-        download("$url",\n\
-                data_dir, keep_download, overwrite_download, verbose)')
+methods = ""
+
+# Generate methods based on tags
 
 for tag in tag_list:
+    # print('tags')
+    # print(tag)
+    # print(tag_list[tag])
+    method = DOUBLE_NEW_LINE
+    newMethod = True
     for url in tag_list[tag]:
-        method_name = tag
         page_url = url["page_url"]
         url = url["url"]
+        if newMethod:
+            method_name = tag
 
-        parameters = dict(
-            method_name=method_name,
-            page_url=page_url,
-            url=url
-        )
+            parameters = dict(
+                method_name=method_name,
+                page_url=page_url,
+                url=url
+            )
 
-        method = dataset_download_template.substitute(parameters)
-        print(method)
+            method += generate_method(parameters)
+            newMethod = False
+        else:
+            parameters = dict(
+                url=url
+            )
+            method += append_download_url(parameters)
 
-# print("-- taglist --")
-# print(tag_list)
+    methods += method
+    # print(methods)
 
-# for each tag:
+pdl = open("../pdl/pdl.py", "r").read()
 
-# add a download for each url
+start, rest = pdl.split(PDL_START_DELIMITER)
+rest, end = rest.split(PDL_END_DELIMITER)
 
-# add generated text to header_template
+pdl_generated = start + PDL_START_DELIMITER + "\n"
+pdl_generated += methods
+pdl_generated += DOUBLE_NEW_LINE + PDL_END_DELIMITER + end
+
+new_pdl = open("../pdl/pdl_generated.py", "w")
+new_pdl.write(pdl_generated)
+
 
 # update pdl library
 
