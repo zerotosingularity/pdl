@@ -2,6 +2,7 @@ import requests
 import os
 import json
 import http
+from string import Template
 
 r = requests.get("http://localhost:5000/api/dlurl")
 
@@ -26,13 +27,38 @@ for url in urls:
 
             tag_list[title].append(url)
 
-print("-- taglist --")
-print(tag_list)
+dataset_download_template = Template(
+    'def $method_name(data_dir="data/", keep_download=False,\n\
+                    overwrite_download=False, verbose=False, info_only=False): \n\
+    """ Download the $method_name dataset\n\
+    more info: $page_url"""\n\
+    if info_only:\n\
+        print(""" Download the $method_name dataset\n \
+                more info: $page_url""")\n\
+    else:\n\
+        download("$url",\n\
+                data_dir, keep_download, overwrite_download, verbose)')
+
+for tag in tag_list:
+    for url in tag_list[tag]:
+        method_name = tag
+        page_url = url["page_url"]
+        url = url["url"]
+
+        parameters = dict(
+            method_name=method_name,
+            page_url=page_url,
+            url=url
+        )
+
+        method = dataset_download_template.substitute(parameters)
+        print(method)
+
+# print("-- taglist --")
+# print(tag_list)
 
 # for each tag:
-# remove pdl-
-# generate method based on tag name
-# add description + parent url
+
 # add a download for each url
 
 # add generated text to header_template
