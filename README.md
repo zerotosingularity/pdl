@@ -10,6 +10,10 @@ datasets.
 
 [Blog Post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
+# Note: Adding your own datasets
+
+The PDL library gets generated based on the scripts/generate.py script, which at the moment depends on an api that is not yet published. Feel free to contact me at jan@zerotosingularity.com if you want to have your dataset added.
+
 # Install
 
 ```bash
