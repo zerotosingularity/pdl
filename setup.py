@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pdl",
-    version="0.7.8",
+    version="0.7.9",
     author="Zero to singularity",
     author_email="jan@zerotosingularity.com",
     install_requires=['requests>=2.18.4'],
