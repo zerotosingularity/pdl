@@ -234,6 +234,78 @@ def nfpa(data_dir="data/", keep_download=False,
                 data_dir, keep_download, overwrite_download, verbose)
 
 
+def yolo9000_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolo9000_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolo9000_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("http://pjreddie.com/media/files/yolo9000.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def yolo_voc_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolo_voc_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolo_voc_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("http://pjreddie.com/media/files/yolo-voc.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def yolov2_tiny_voc_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolov2_tiny_voc_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolov2_tiny_voc_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("http://pjreddie.com/media/files/yolov2-tiny-voc.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def yolov2_tiny_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolov2_tiny_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolov2_tiny_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("https://pjreddie.com/media/files/yolov2-tiny.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def yolov2_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolov2_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolov2_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("https://pjreddie.com/media/files/yolov2.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def yolov3_weights(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolov3_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolov3_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("https://pjreddie.com/media/files/yolov3.weights",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
 # PDL Core #
 
 
