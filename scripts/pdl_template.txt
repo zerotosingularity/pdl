@@ -1,0 +1,109 @@
+""" PDL Module download dataset archives """
+
+import zipfile
+import os
+import tarfile
+
+import requests
+
+ZIP_EXTENSION = ".zip"
+TAR_EXTENSION = ".tar"
+TGZ_EXTENSION = ".tgz"
+TAR_GZ_EXTENSION = ".tar.gz"
+
+EMPTY_URL_ERROR = "ERROR: url parameter should not be empty."
+FILE_FORMAT_ERROR = "ERROR: File format currently not supported."
+FILENAME_ERROR = "ERROR: Filename could not be found."
+
+# Dataset helpers (alphabetically) #
+
+
+$methods
+
+
+# PDL Core #
+
+
+def download(url, data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False):
+    """ Download and extract the archive from the url """
+
+    is_archive = True
+
+    if url == "":
+        raise Exception(EMPTY_URL_ERROR)
+
+    # Get filename from url
+    echo("Get the filename from the supplied url", verbose)
+
+    filename = get_filename(url)
+
+    if filename == "" or filename is None:
+        raise Exception(FILENAME_ERROR)
+
+    file_location = get_file_location(data_dir, filename)
+    echo(file_location, verbose)
+
+    if os.path.exists(file_location) and not overwrite_download:
+        echo(
+            "The requested file: {filename} already exists in location: {file_location}. \
+            Use: 'overwrite_download=True' to force overwrite"
+            .format(filename=filename, file_location=file_location), True)
+    else:
+        echo(file_location, verbose)
+
+        echo("Downloading: {url}".format(url=url), verbose)
+        resp = requests.get(url, allow_redirects=True, stream=True)
+
+        os.makedirs(data_dir, exist_ok=True)
+
+        local_file = open(file_location, 'wb')
+
+        local_file.write(resp.content)
+        local_file.close()
+
+        echo("finished downloading", verbose)
+
+    if filename.endswith(ZIP_EXTENSION):
+        echo("Extracting zip file.", verbose)
+        zipf = zipfile.ZipFile(file_location, 'r')
+        zipf.extractall(data_dir)
+        zipf.close()
+
+    elif(filename.endswith(TAR_EXTENSION) or
+         filename.endswith(TAR_GZ_EXTENSION) or
+         filename.endswith(TGZ_EXTENSION)):
+        echo("Extracting tar file.", verbose)
+
+        tar = tarfile.open(file_location, 'r')
+        tar.extractall(data_dir)
+        tar.close()
+    else:
+        is_archive = False
+        echo("Not extracting: {filename}.".format(filename=filename))
+
+    # Keep or remove downloaded file
+    if not keep_download and is_archive:
+        echo("Removing file: {filename}".format(filename=filename), verbose)
+        os.remove(file_location)
+    else:
+        echo("Keeping the downloaded file.", verbose)
+
+
+# Helper methods #
+
+
+def echo(msg, debug=True):
+    """ Print msg optionally """
+    if debug:
+        print(msg)
+
+
+def get_filename(url):
+    """ Get the filename of a url """
+    return url[url.rfind("/")+1:]
+
+
+def get_file_location(data_dir, filename):
+    """ Concat data_dir and filename """
+    return data_dir + filename

@@ -19,7 +19,7 @@ FILENAME_ERROR = "ERROR: Filename could not be found."
 
 
 def cifar_100_matlab(data_dir="data/", keep_download=False,
-                     overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the cifar_100_matlab dataset
     more info: http://www.cs.utoronto.ca/~kriz/cifar.html"""
     if info_only:
@@ -27,11 +27,11 @@ def cifar_100_matlab(data_dir="data/", keep_download=False,
                  more info: http://www.cs.utoronto.ca/~kriz/cifar.html""")
     else:
         download("http://www.cs.utoronto.ca/~kriz/cifar-100-matlab.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def cifar_100_python(data_dir="data/", keep_download=False,
-                     overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the cifar_100_python dataset
     more info: http://www.cs.utoronto.ca/~kriz/cifar.html"""
     if info_only:
@@ -39,7 +39,7 @@ def cifar_100_python(data_dir="data/", keep_download=False,
                  more info: http://www.cs.utoronto.ca/~kriz/cifar.html""")
     else:
         download("http://www.cs.utoronto.ca/~kriz/cifar-100-python.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def cifar_10_matlab(data_dir="data/", keep_download=False,
@@ -51,7 +51,7 @@ def cifar_10_matlab(data_dir="data/", keep_download=False,
                  more info: http://www.cs.utoronto.ca/~kriz/cifar.html""")
     else:
         download("http://www.cs.utoronto.ca/~kriz/cifar-10-matlab.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def cifar_10_python(data_dir="data/", keep_download=False,
@@ -63,11 +63,71 @@ def cifar_10_python(data_dir="data/", keep_download=False,
                  more info: http://www.cs.utoronto.ca/~kriz/cifar.html""")
     else:
         download("http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def coco_2014(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the coco_2014 dataset
+    more info: http://cocodataset.org/#download"""
+    if info_only:
+        print(""" Download the coco_2014 dataset
+                 more info: http://cocodataset.org/#download""")
+    else:
+        download("http://images.cocodataset.org/annotations/image_info_test2014.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/annotations/annotations_trainval2014.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/test2014.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/val2014.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/train2014.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def coco_2015(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the coco_2015 dataset
+    more info: http://cocodataset.org/#download"""
+    if info_only:
+        print(""" Download the coco_2015 dataset
+                 more info: http://cocodataset.org/#download""")
+    else:
+        download("http://images.cocodataset.org/annotations/image_info_test2015.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/test2015.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def coco_2017(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the coco_2017 dataset
+    more info: http://cocodataset.org/#download"""
+    if info_only:
+        print(""" Download the coco_2017 dataset
+                 more info: http://cocodataset.org/#download""")
+    else:
+        download("http://images.cocodataset.org/annotations/image_info_unlabeled2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/annotations/image_info_test2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/annotations/stuff_annotations_trainval2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/annotations/annotations_trainval2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/unlabeled2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/test2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/val2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("http://images.cocodataset.org/zips/train2017.zip",
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def dogscats(data_dir="data/", keep_download=False,
-             overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the dogscats dataset
     more info: http://localhost:8888/notebooks/courses/dl1/lesson1.ipynb"""
     if info_only:
@@ -75,11 +135,11 @@ def dogscats(data_dir="data/", keep_download=False,
                  more info: http://localhost:8888/notebooks/courses/dl1/lesson1.ipynb""")
     else:
         download("http://files.fast.ai/data/dogscats.zip",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def gsvh_cropped(data_dir="data/", keep_download=False,
-                 overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the gsvh_cropped dataset
     more info: http://ufldl.stanford.edu/housenumbers/"""
     if info_only:
@@ -87,15 +147,15 @@ def gsvh_cropped(data_dir="data/", keep_download=False,
                  more info: http://ufldl.stanford.edu/housenumbers/""")
     else:
         download("http://ufldl.stanford.edu/housenumbers/extra_32x32.mat",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://ufldl.stanford.edu/housenumbers/test_32x32.mat",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://ufldl.stanford.edu/housenumbers/train_32x32.mat",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def gsvh_full(data_dir="data/", keep_download=False,
-              overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the gsvh_full dataset
     more info: http://ufldl.stanford.edu/housenumbers/"""
     if info_only:
@@ -103,29 +163,37 @@ def gsvh_full(data_dir="data/", keep_download=False,
                  more info: http://ufldl.stanford.edu/housenumbers/""")
     else:
         download("http://ufldl.stanford.edu/housenumbers/extra.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://ufldl.stanford.edu/housenumbers/test.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://ufldl.stanford.edu/housenumbers/train.tar.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def imdb(data_dir="data/", keep_download=False,
-         overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the imdb dataset
     more info: https://datasets.imdbws.com/"""
     if info_only:
         print(""" Download the imdb dataset
                  more info: https://datasets.imdbws.com/""")
     else:
+        download("https://datasets.imdbws.com/title.ratings.tsv.gz",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("https://datasets.imdbws.com/title.principals.tsv.gz",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("https://datasets.imdbws.com/title.episode.tsv.gz",
+                data_dir, keep_download, overwrite_download, verbose)
+        download("https://datasets.imdbws.com/title.crew.tsv.gz",
+                data_dir, keep_download, overwrite_download, verbose)
         download("https://datasets.imdbws.com/title.basics.tsv.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("https://datasets.imdbws.com/title.akas.tsv.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def mnist(data_dir="data/", keep_download=False,
-          overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the mnist dataset
     more info: http://yann.lecun.com/exdb/mnist/"""
     if info_only:
@@ -133,17 +201,17 @@ def mnist(data_dir="data/", keep_download=False,
                  more info: http://yann.lecun.com/exdb/mnist/""")
     else:
         download("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
         download("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 def movie_lens_latest(data_dir="data/", keep_download=False,
-                      overwrite_download=False, verbose=False, info_only=False):
+                    overwrite_download=False, verbose=False, info_only=False):
     """ Download the movie_lens_latest dataset
     more info: http://files.grouplens.org/datasets/movielens/"""
     if info_only:
@@ -151,7 +219,19 @@ def movie_lens_latest(data_dir="data/", keep_download=False,
                  more info: http://files.grouplens.org/datasets/movielens/""")
     else:
         download("http://files.grouplens.org/datasets/movielens/ml-latest-small.zip",
-                 data_dir, keep_download, overwrite_download, verbose)
+                data_dir, keep_download, overwrite_download, verbose)
+
+
+def nfpa(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the nfpa dataset
+    more info: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/"""
+    if info_only:
+        print(""" Download the nfpa dataset
+                 more info: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/""")
+    else:
+        download("https://timebutt.github.io/content/other/NFPA_dataset.zip",
+                data_dir, keep_download, overwrite_download, verbose)
 
 
 # PDL Core #
