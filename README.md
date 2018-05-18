@@ -90,4 +90,25 @@ $ pytest
 
 For more details on pytest: [Getting started with pytest](https://docs.pytest.org/en/latest/getting-started.html).
 
-# Datasets
+
+
+* [cifar_100_matlab](http://www.cs.utoronto.ca/~kriz/cifar.html)
+* [cifar_100_python](http://www.cs.utoronto.ca/~kriz/cifar.html)
+* [cifar_10_matlab](http://www.cs.utoronto.ca/~kriz/cifar.html)
+* [cifar_10_python](http://www.cs.utoronto.ca/~kriz/cifar.html)
+* [coco_2014](http://cocodataset.org/#download)
+* [coco_2015](http://cocodataset.org/#download)
+* [coco_2017](http://cocodataset.org/#download)
+* [dogscats](http://localhost:8888/notebooks/courses/dl1/lesson1.ipynb)
+* [gsvh_cropped](http://ufldl.stanford.edu/housenumbers/)
+* [gsvh_full](http://ufldl.stanford.edu/housenumbers/)
+* [imdb](https://datasets.imdbws.com/)
+* [mnist](http://yann.lecun.com/exdb/mnist/)
+* [movie_lens_latest](http://files.grouplens.org/datasets/movielens/)
+* [nfpa](https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/)
+* [yolo9000_weights](https://github.com/AlexeyAB/darknet#how-to-use)
+* [yolo_voc_weights](https://github.com/AlexeyAB/darknet#how-to-use)
+* [yolov2_tiny_voc_weights](https://github.com/AlexeyAB/darknet#how-to-use)
+* [yolov2_tiny_weights](https://github.com/AlexeyAB/darknet#how-to-use)
+* [yolov2_weights](https://github.com/AlexeyAB/darknet#how-to-use)
+* [yolov3_weights](https://github.com/AlexeyAB/darknet#how-to-use)
