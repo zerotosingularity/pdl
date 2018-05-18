@@ -6,6 +6,7 @@ from string import Template
 import os
 
 
+MINIMAL_INFO_INDENT = 5
 DOUBLE_NEW_LINE = "\n\n"
 PDL_START_DELIMITER = "# Dataset helpers (alphabetically) #"
 PDL_END_DELIMITER = "# PDL Core #"
@@ -15,9 +16,9 @@ TOKEN = os.environ["PDL_TOKEN"]
 
 
 def generate_method(paramaters):
-    dataset_download_template = Template(
-        'def $method_name(data_dir="data/", keep_download=False,\n\
-                    overwrite_download=False, verbose=False, info_only=False):\n\
+    indent = (len(parameters["method_name"]) + MINIMAL_INFO_INDENT) * " "
+    template_string = f'def $method_name(data_dir="data/", keep_download=False,\n\
+{indent}overwrite_download=False, verbose=False, info_only=False):\n\
     """ Download the $method_name dataset\n\
     more info: $page_url"""\n\
     if info_only:\n\
@@ -25,7 +26,9 @@ def generate_method(paramaters):
                 more info: $page_url""")\n\
     else:\n\
         download("$url",\n\
-                data_dir, keep_download, overwrite_download, verbose)\n')
+                 data_dir, keep_download, overwrite_download, verbose)\n'
+
+    dataset_download_template = Template(template_string)
 
     generated_method = dataset_download_template.substitute(parameters)
     return generated_method
@@ -34,7 +37,7 @@ def generate_method(paramaters):
 def append_download_url(parameters, method=None):
     append_download_url_template = Template(
         '        download("$url",\n\
-                data_dir, keep_download, overwrite_download, verbose)\n')
+                 data_dir, keep_download, overwrite_download, verbose)\n')
 
     generated_code = append_download_url_template.substitute(parameters)
 
