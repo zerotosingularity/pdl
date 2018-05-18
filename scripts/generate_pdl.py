@@ -3,11 +3,15 @@ import os
 import json
 import http
 from string import Template
+import os
 
 
 DOUBLE_NEW_LINE = "\n\n"
 PDL_START_DELIMITER = "# Dataset helpers (alphabetically) #"
 PDL_END_DELIMITER = "# PDL Core #"
+PDL_BACKEND = "https://lnkr-api.zerotosingularity.com/api/dlurl"
+USERNAME = os.environ["PDL_USERNAME"]
+TOKEN = os.environ["PDL_TOKEN"]
 
 
 def generate_method(paramaters):
@@ -41,11 +45,17 @@ def append_download_url(parameters, method=None):
         return generated_code
 
 
-r = requests.get("http://localhost:5000/api/dlurl")
+headers = {}
+headers["X-Session-User"] = USERNAME
+headers["X-Session-Token"] = TOKEN
+headers["Content-Type"] = "application/json"
+
+r = requests.get(PDL_BACKEND, headers=headers)
 
 if(r.status_code != requests.codes.ok):
     print("PDL: Url fetching failed, exiting...")
     exit(1)
+
 
 # Construct list of tags
 
