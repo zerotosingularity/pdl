@@ -138,6 +138,7 @@ print(current_readme)
 readme_start, other = current_readme.split(README_DATASETS_DELIMITER)
 
 generated_readme = readme_start + DOUBLE_NEW_LINE
+generated_readme += README_DATASETS_DELIMITER + DOUBLE_NEW_LINE
 generated_readme += readme_datasets
 
 new_readme = open("../README.md", "w")
