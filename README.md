@@ -1,4 +1,4 @@
-# Disclaimer: alpha version
+# Disclaimer: beta version
 
 # PDL - Python Download Library
 
@@ -8,11 +8,11 @@ High level library for:
 
 datasets.
 
-[Blog Post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
+[Read more in the blog post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
 # Note: Adding your own datasets
 
-The PDL library gets generated based on the scripts/generate.py script, which at the moment depends on an api that is not yet published. Feel free to contact me at jan@zerotosingularity.com if you want to have your dataset added.
+The PDL library gets generated based on the scripts/generate.py script, which depends on the https://lnkr-api.zerotosingularity.com api, which is currently online but not yet publicly accessible. Feel free to contact me at jan@zerotosingularity.com if you want to have your dataset added.
 
 # Install
 
