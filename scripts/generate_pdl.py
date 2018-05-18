@@ -13,6 +13,7 @@ PDL_END_DELIMITER = "# PDL Core #"
 PDL_BACKEND = "https://lnkr-api.zerotosingularity.com/api/dlurl"
 USERNAME = os.environ["PDL_USERNAME"]
 TOKEN = os.environ["PDL_TOKEN"]
+README_DATASETS_DELIMITER = "# Datasets"
 
 
 def generate_method(paramaters):
@@ -85,8 +86,9 @@ for key in sorted(tag_list):
     sorted_tag_list[key] = tag_list[key]
 
 methods = ""
+readme_datasets = ""
 
-# Generate methods based on tags
+# Generate methods and README Datasets section based on tags
 
 for tag in sorted_tag_list:
     method = DOUBLE_NEW_LINE
@@ -105,6 +107,9 @@ for tag in sorted_tag_list:
 
             method += generate_method(parameters)
             newMethod = False
+
+            readme_dataset = f"* [{method_name}]({page_url})\n"
+            readme_datasets += readme_dataset
         else:
             parameters = dict(
                 url=url
@@ -125,3 +130,16 @@ pdl_generated += DOUBLE_NEW_LINE + PDL_END_DELIMITER + end
 
 new_pdl = open("../pdl/pdl.py", "w")
 new_pdl.write(pdl_generated)
+
+current_readme = open("../README.md", "r").read()
+
+print(current_readme)
+
+readme_start, other = current_readme.split(README_DATASETS_DELIMITER)
+
+generated_readme = readme_start + DOUBLE_NEW_LINE
+generated_readme += readme_datasets
+
+new_readme = open("../README.md", "w")
+
+new_readme.write(generated_readme)
