@@ -133,8 +133,6 @@ new_pdl.write(pdl_generated)
 
 current_readme = open("../README.md", "r").read()
 
-print(current_readme)
-
 readme_start, other = current_readme.split(README_DATASETS_DELIMITER)
 
 generated_readme = readme_start + DOUBLE_NEW_LINE
