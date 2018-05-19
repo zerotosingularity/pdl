@@ -234,6 +234,38 @@ def nfpa(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def open-images-dataset-v4(data_dir="data/", keep_download=False,
+                           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the open-images-dataset-v4 dataset
+    more info: https://www.figure-eight.com/dataset/open-images-annotated-with-bounding-boxes/"""
+    if info_only:
+        print(""" Download the open-images-dataset-v4 dataset
+                 more info: https://www.figure-eight.com/dataset/open-images-annotated-with-bounding-boxes/""")
+    else:
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/validation.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_08.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_07.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_06.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_05.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_04.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_03.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_02.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_01.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_00.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/test.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def yolo9000_weights(data_dir="data/", keep_download=False,
                      overwrite_download=False, verbose=False, info_only=False):
     """ Download the yolo9000_weights dataset
