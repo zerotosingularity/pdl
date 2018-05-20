@@ -210,6 +210,24 @@ def mnist(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def mnist-fashion(data_dir="data/", keep_download=False,
+                  overwrite_download=False, verbose=False, info_only=False):
+    """ Download the mnist-fashion dataset
+    more info: https://github.com/zalandoresearch/fashion-mnist"""
+    if info_only:
+        print(""" Download the mnist-fashion dataset
+                 more info: https://github.com/zalandoresearch/fashion-mnist""")
+    else:
+        download("http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def movie_lens_latest(data_dir="data/", keep_download=False,
                       overwrite_download=False, verbose=False, info_only=False):
     """ Download the movie_lens_latest dataset
@@ -263,6 +281,114 @@ def open-images-dataset-v4(data_dir="data/", keep_download=False,
         download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/train_00.zip",
                  data_dir, keep_download, overwrite_download, verbose)
         download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/test.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def sentiment140(data_dir="data/", keep_download=False,
+                 overwrite_download=False, verbose=False, info_only=False):
+    """ Download the sentiment140 dataset
+    more info: http://help.sentiment140.com/for-students/"""
+    if info_only:
+        print(""" Download the sentiment140 dataset
+                 more info: http://help.sentiment140.com/for-students/""")
+    else:
+        download("http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def twenty-newsgroups(data_dir="data/", keep_download=False,
+                      overwrite_download=False, verbose=False, info_only=False):
+    """ Download the twenty-newsgroups dataset
+    more info: https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/"""
+    if info_only:
+        print(""" Download the twenty-newsgroups dataset
+                 more info: https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/""")
+    else:
+        download("https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/mini_newsgroups.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20newsgroups.html",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20newsgroups.data.html",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/20_newsgroups.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def vqa-2015(data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False, info_only=False):
+    """ Download the vqa-2015 dataset
+    more info: http://www.visualqa.org/download.html"""
+    if info_only:
+        print(""" Download the vqa-2015 dataset
+                 more info: http://www.visualqa.org/download.html""")
+    else:
+        download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_test2015.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_val2015.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_train2015.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Questions_Test_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Questions_Val_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Questions_Train_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Annotations_Val_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Annotations_Train_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def vqa-2016(data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False, info_only=False):
+    """ Download the vqa-2016 dataset
+    more info: http://www.visualqa.org/download.html"""
+    if info_only:
+        print(""" Download the vqa-2016 dataset
+                 more info: http://www.visualqa.org/download.html""")
+    else:
+        download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_binary_val2017.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_binary_train2017.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Questions_Binary_Val2017_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Questions_Binary_Train2017_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Annotations_Binary_Val2017_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/abstract_v002/vqa/Annotations_Binary_Train2017_abstract_v002.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def vqa-2017(data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False, info_only=False):
+    """ Download the vqa-2017 dataset
+    more info: http://www.visualqa.org/download.html"""
+    if info_only:
+        print(""" Download the vqa-2017 dataset
+                 more info: http://www.visualqa.org/download.html""")
+    else:
+        download("http://visualqa.org/data/mscoco/vqa/v2_Complementary_Pairs_Val_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Complementary_Pairs_Train_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://msvocds.blob.core.windows.net/coco2015/test2015.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://msvocds.blob.core.windows.net/coco2014/val2014.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://msvocds.blob.core.windows.net/coco2014/train2014.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Questions_Test_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Questions_Val_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Questions_Train_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Annotations_Val_mscoco.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://visualqa.org/data/mscoco/vqa/v2_Annotations_Train_mscoco.zip",
                  data_dir, keep_download, overwrite_download, verbose)
 
 

@@ -96,6 +96,8 @@ For more details on pytest: [Getting started with pytest](https://docs.pytest.or
 
 
 
+
+
 # Datasets
 
 * [cifar_100_matlab](http://www.cs.utoronto.ca/~kriz/cifar.html)
@@ -110,9 +112,15 @@ For more details on pytest: [Getting started with pytest](https://docs.pytest.or
 * [gsvh_full](http://ufldl.stanford.edu/housenumbers/)
 * [imdb](https://datasets.imdbws.com/)
 * [mnist](http://yann.lecun.com/exdb/mnist/)
+* [mnist-fashion](https://github.com/zalandoresearch/fashion-mnist)
 * [movie_lens_latest](http://files.grouplens.org/datasets/movielens/)
 * [nfpa](https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/)
 * [open-images-dataset-v4](https://www.figure-eight.com/dataset/open-images-annotated-with-bounding-boxes/)
+* [sentiment140](http://help.sentiment140.com/for-students/)
+* [twenty-newsgroups](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/)
+* [vqa-2015](http://www.visualqa.org/download.html)
+* [vqa-2016](http://www.visualqa.org/download.html)
+* [vqa-2017](http://www.visualqa.org/download.html)
 * [yolo9000_weights](https://github.com/AlexeyAB/darknet#how-to-use)
 * [yolo_voc_weights](https://github.com/AlexeyAB/darknet#how-to-use)
 * [yolov2_tiny_voc_weights](https://github.com/AlexeyAB/darknet#how-to-use)
