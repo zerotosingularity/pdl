@@ -91,13 +91,6 @@ $ pytest
 For more details on pytest: [Getting started with pytest](https://docs.pytest.org/en/latest/getting-started.html).
 
 
-
-
-
-
-
-
-
 # Datasets
 
 * [cifar_100_matlab](http://www.cs.utoronto.ca/~kriz/cifar.html)
