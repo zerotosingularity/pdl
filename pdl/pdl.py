@@ -210,12 +210,12 @@ def mnist(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def mnist-fashion(data_dir="data/", keep_download=False,
+def mnist_fashion(data_dir="data/", keep_download=False,
                   overwrite_download=False, verbose=False, info_only=False):
-    """ Download the mnist-fashion dataset
+    """ Download the mnist_fashion dataset
     more info: https://github.com/zalandoresearch/fashion-mnist"""
     if info_only:
-        print(""" Download the mnist-fashion dataset
+        print(""" Download the mnist_fashion dataset
                  more info: https://github.com/zalandoresearch/fashion-mnist""")
     else:
         download("http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz",
@@ -252,12 +252,12 @@ def nfpa(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def open-images-dataset-v4(data_dir="data/", keep_download=False,
+def open_images_dataset_v4(data_dir="data/", keep_download=False,
                            overwrite_download=False, verbose=False, info_only=False):
-    """ Download the open-images-dataset-v4 dataset
+    """ Download the open_images_dataset_v4 dataset
     more info: https://www.figure-eight.com/dataset/open-images-annotated-with-bounding-boxes/"""
     if info_only:
-        print(""" Download the open-images-dataset-v4 dataset
+        print(""" Download the open_images_dataset_v4 dataset
                  more info: https://www.figure-eight.com/dataset/open-images-annotated-with-bounding-boxes/""")
     else:
         download("https://requestor-proxy.figure-eight.com/figure_eight_datasets/open-images/zip_files/validation.zip",
@@ -296,12 +296,12 @@ def sentiment140(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def twenty-newsgroups(data_dir="data/", keep_download=False,
+def twenty_newsgroups(data_dir="data/", keep_download=False,
                       overwrite_download=False, verbose=False, info_only=False):
-    """ Download the twenty-newsgroups dataset
+    """ Download the twenty_newsgroups dataset
     more info: https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/"""
     if info_only:
-        print(""" Download the twenty-newsgroups dataset
+        print(""" Download the twenty_newsgroups dataset
                  more info: https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/""")
     else:
         download("https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/mini_newsgroups.tar.gz",
@@ -314,12 +314,12 @@ def twenty-newsgroups(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def vqa-2015(data_dir="data/", keep_download=False,
+def vqa_2015(data_dir="data/", keep_download=False,
              overwrite_download=False, verbose=False, info_only=False):
-    """ Download the vqa-2015 dataset
+    """ Download the vqa_2015 dataset
     more info: http://www.visualqa.org/download.html"""
     if info_only:
-        print(""" Download the vqa-2015 dataset
+        print(""" Download the vqa_2015 dataset
                  more info: http://www.visualqa.org/download.html""")
     else:
         download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_test2015.zip",
@@ -340,12 +340,12 @@ def vqa-2015(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def vqa-2016(data_dir="data/", keep_download=False,
+def vqa_2016(data_dir="data/", keep_download=False,
              overwrite_download=False, verbose=False, info_only=False):
-    """ Download the vqa-2016 dataset
+    """ Download the vqa_2016 dataset
     more info: http://www.visualqa.org/download.html"""
     if info_only:
-        print(""" Download the vqa-2016 dataset
+        print(""" Download the vqa_2016 dataset
                  more info: http://www.visualqa.org/download.html""")
     else:
         download("http://visualqa.org/data/abstract_v002/scene_img/scene_img_abstract_v002_binary_val2017.zip",
@@ -362,12 +362,12 @@ def vqa-2016(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def vqa-2017(data_dir="data/", keep_download=False,
+def vqa_2017(data_dir="data/", keep_download=False,
              overwrite_download=False, verbose=False, info_only=False):
-    """ Download the vqa-2017 dataset
+    """ Download the vqa_2017 dataset
     more info: http://www.visualqa.org/download.html"""
     if info_only:
-        print(""" Download the vqa-2017 dataset
+        print(""" Download the vqa_2017 dataset
                  more info: http://www.visualqa.org/download.html""")
     else:
         download("http://visualqa.org/data/mscoco/vqa/v2_Complementary_Pairs_Val_mscoco.zip",

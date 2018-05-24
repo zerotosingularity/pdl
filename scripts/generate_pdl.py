@@ -100,7 +100,7 @@ for tag in sorted_tag_list:
             method_name = tag
 
             parameters = dict(
-                method_name=method_name,
+                method_name=method_name.replace("-", "_"),
                 page_url=page_url,
                 url=url
             )
