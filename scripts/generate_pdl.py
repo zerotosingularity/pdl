@@ -69,7 +69,7 @@ urls = json.loads(r.text)
 
 for url in urls:
     if url["tags"] is not None:
-        matching = [u for u in url["tags"] if "pdl" in u["title"]]
+        matching = [u for u in url["tags"] if "pdl-" in u["title"]]
 
         for m in matching:
             # get title and strip "pdl-"
