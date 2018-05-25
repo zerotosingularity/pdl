@@ -294,6 +294,8 @@ def pascal_voc_2007(data_dir="data/", keep_download=False,
     else:
         download("http://pjreddie.com/media/files/VOC2007_doc.pdf",
                  data_dir, keep_download, overwrite_download, verbose)
+        download("https://storage.googleapis.com/coco-dataset/external/PASCAL_VOC.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
         download("http://pjreddie.com/media/files/VOCdevkit_08-Jun-2007.tar",
                  data_dir, keep_download, overwrite_download, verbose)
         download("http://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar",
@@ -572,6 +574,7 @@ def download(url, data_dir="data/", keep_download=False,
          filename.endswith(TGZ_EXTENSION)):
         echo("Extracting tar file.", verbose)
 
+        echo(file_location, verboses)
         tar = tarfile.open(file_location, 'r')
         tar.extractall(data_dir)
         tar.close()
