@@ -574,7 +574,7 @@ def download(url, data_dir="data/", keep_download=False,
          filename.endswith(TGZ_EXTENSION)):
         echo("Extracting tar file.", verbose)
 
-        echo(file_location, verboses)
+        echo(file_location, verbose)
         tar = tarfile.open(file_location, 'r')
         tar.extractall(data_dir)
         tar.close()
