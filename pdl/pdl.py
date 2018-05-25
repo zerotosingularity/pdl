@@ -284,6 +284,42 @@ def open_images_dataset_v4(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def pascal_voc_2007(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the pascal_voc_2007 dataset
+    more info: https://pjreddie.com/projects/pascal-voc-dataset-mirror/"""
+    if info_only:
+        print(""" Download the pascal_voc_2007 dataset
+                 more info: https://pjreddie.com/projects/pascal-voc-dataset-mirror/""")
+    else:
+        download("http://pjreddie.com/media/files/VOC2007_doc.pdf",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOCdevkit_08-Jun-2007.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def pascal_voc_2012(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the pascal_voc_2012 dataset
+    more info: https://pjreddie.com/projects/pascal-voc-dataset-mirror/"""
+    if info_only:
+        print(""" Download the pascal_voc_2012 dataset
+                 more info: https://pjreddie.com/projects/pascal-voc-dataset-mirror/""")
+    else:
+        download("http://pjreddie.com/media/files/VOC2012_doc.pdf",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOCdevkit_18-May-2011.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOC2012test.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def sentiment140(data_dir="data/", keep_download=False,
                  overwrite_download=False, verbose=False, info_only=False):
     """ Download the sentiment140 dataset
@@ -293,6 +329,24 @@ def sentiment140(data_dir="data/", keep_download=False,
                  more info: http://help.sentiment140.com/for-students/""")
     else:
         download("http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def standford_squad(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the standford_squad dataset
+    more info: https://rajpurkar.github.io/SQuAD-explorer/"""
+    if info_only:
+        print(""" Download the standford_squad dataset
+                 more info: https://rajpurkar.github.io/SQuAD-explorer/""")
+    else:
+        download("https://worksheets.codalab.org/rest/bundles/0xc83bf36cf8714819ba11802b59cb809e/contents/blob/",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://worksheets.codalab.org/rest/bundles/0xbcd57bee090b421c982906709c8c27e1/contents/blob/",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
                  data_dir, keep_download, overwrite_download, verbose)
 
 
