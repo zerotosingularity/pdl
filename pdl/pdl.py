@@ -570,16 +570,6 @@ def yolov3_weights(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
-def local(data_dir="data/", keep_download=False,
-                   overwrite_download=False, verbose=False, info_only=False):
-    """ Download the yolov3_weights dataset
-    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
-    if info_only:
-        print(""" Download the yolov3_weights dataset
-                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
-    else:
-        download("http://localhost:8000/t10k-labels-idx1-ubyte.gz",
-                 data_dir, keep_download, overwrite_download, verbose)
 # PDL Core #
 
 
@@ -638,7 +628,8 @@ def download(url, data_dir="data/", keep_download=False,
         tar = tarfile.open(file_location, 'r')
         tar.extractall(data_dir)
         tar.close()
-    elif(filename.endswith(GZ_EXTENSION)):
+
+    elif filename.endswith(GZ_EXTENSION):
         echo("Extracting gz file.", verbose)
 
         out_file = file_location.strip(GZ_EXTENSION)
