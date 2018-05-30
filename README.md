@@ -6,7 +6,7 @@ High level library for:
 * download and unarchiving,
 * discovering,
 
-datasets.
+datasets as well as pre-trained models for Transfer Learning.
 
 [Read more in the blog post](https://www.zerotosingularity.com/posts/downloading-datasets-introducting-pdl/)
 
