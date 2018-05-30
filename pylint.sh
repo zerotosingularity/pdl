@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pylint pdl/ tests/
+pylint pdl/ tests/ scripts/
