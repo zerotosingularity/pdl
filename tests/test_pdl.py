@@ -20,6 +20,8 @@ ZIP_URL = "{url}/tests/fixtures/hello_tensorflow.zip".format(url=URL)
 TAR_GZ_URL = "{url}/tests/fixtures/hello_tensorflow.tar.gz".format(url=URL)
 TAR_URL = "{url}/tests/fixtures/hello_tensorflow.tar".format(url=URL)
 TGZ_URL = "{url}/tests/fixtures/hello_tensorflow.tgz".format(url=URL)
+GZ_URL = "{url}/tests/fixtures/1_hello_tensorflow.py.gz".format(url=URL)
+
 NON_ARCHIVE_URL = "{url}/tests/fixtures/{mat_file}".format(
     url=URL, mat_file=MAT_FILE)
 
@@ -74,6 +76,12 @@ def test_tgz_download():
     """ Test .tgz download """
 
     pdl_test_helper(TGZ_URL)
+
+
+def test_gz_download():
+    """ Test .gz download """
+
+    pdl_test_helper(GZ_URL)
 
 
 def test_empty_url():

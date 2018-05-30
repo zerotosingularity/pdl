@@ -3,17 +3,21 @@
 import zipfile
 import os
 import tarfile
-
+import gzip
+import shutil
 import requests
+
 
 ZIP_EXTENSION = ".zip"
 TAR_EXTENSION = ".tar"
 TGZ_EXTENSION = ".tgz"
 TAR_GZ_EXTENSION = ".tar.gz"
+GZ_EXTENSION = ".gz"
 
 EMPTY_URL_ERROR = "ERROR: url parameter should not be empty."
 FILE_FORMAT_ERROR = "ERROR: File format currently not supported."
 FILENAME_ERROR = "ERROR: Filename could not be found."
+
 
 # Dataset helpers (alphabetically) #
 
@@ -578,6 +582,15 @@ def download(url, data_dir="data/", keep_download=False,
         tar = tarfile.open(file_location, 'r')
         tar.extractall(data_dir)
         tar.close()
+    elif(filename.endswith(GZ_EXTENSION)):
+        echo("Extracting gz file.", verbose)
+
+        out_file = file_location.strip(GZ_EXTENSION)
+
+        with gzip.open(file_location, 'rb') as f_in:
+            with open(out_file, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
+
     else:
         is_archive = False
         echo("Not extracting: {filename}.".format(filename=filename))
