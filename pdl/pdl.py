@@ -196,6 +196,18 @@ def imdb(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def joe_go(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the joe_go dataset
+    more info: https://pjreddie.com/projects/jgdb/"""
+    if info_only:
+        print(""" Download the joe_go dataset
+                 more info: https://pjreddie.com/projects/jgdb/""")
+    else:
+        download("https://pjreddie.com/media/files/jgdb.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def mnist(data_dir="data/", keep_download=False,
           overwrite_download=False, verbose=False, info_only=False):
     """ Download the mnist dataset
@@ -211,6 +223,20 @@ def mnist(data_dir="data/", keep_download=False,
         download("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
                  data_dir, keep_download, overwrite_download, verbose)
         download("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def mnist_csv(data_dir="data/", keep_download=False,
+              overwrite_download=False, verbose=False, info_only=False):
+    """ Download the mnist_csv dataset
+    more info: https://pjreddie.com/projects/mnist-in-csv/"""
+    if info_only:
+        print(""" Download the mnist_csv dataset
+                 more info: https://pjreddie.com/projects/mnist-in-csv/""")
+    else:
+        download("https://pjreddie.com/media/files/mnist_test.csv",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://pjreddie.com/media/files/mnist_train.csv",
                  data_dir, keep_download, overwrite_download, verbose)
 
 
@@ -452,6 +478,26 @@ def vqa_2017(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def wikitext103(data_dir="data/", keep_download=False,
+                overwrite_download=False, verbose=False, info_only=False):
+    """ Download the wikitext103 dataset
+    more info: http://files.fast.ai/models/wt103/"""
+    if info_only:
+        print(""" Download the wikitext103 dataset
+                 more info: http://files.fast.ai/models/wt103/""")
+    else:
+        download("http://files.fast.ai/models/wt103/itos_wt103.pkl",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://files.fast.ai/models/wt103/fwd_wt103_enc.h5",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://files.fast.ai/models/wt103/fwd_wt103.h5",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://files.fast.ai/models/wt103/bwd_wt103_enc.h5",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://files.fast.ai/models/wt103/bwd_wt103.h5",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def yolo9000_weights(data_dir="data/", keep_download=False,
                      overwrite_download=False, verbose=False, info_only=False):
     """ Download the yolo9000_weights dataset
@@ -524,6 +570,16 @@ def yolov3_weights(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def local(data_dir="data/", keep_download=False,
+                   overwrite_download=False, verbose=False, info_only=False):
+    """ Download the yolov3_weights dataset
+    more info: https://github.com/AlexeyAB/darknet#how-to-use"""
+    if info_only:
+        print(""" Download the yolov3_weights dataset
+                 more info: https://github.com/AlexeyAB/darknet#how-to-use""")
+    else:
+        download("http://localhost:8000/t10k-labels-idx1-ubyte.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
 # PDL Core #
 
 
