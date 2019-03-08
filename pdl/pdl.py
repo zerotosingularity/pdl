@@ -22,6 +22,20 @@ FILENAME_ERROR = "ERROR: Filename could not be found."
 # Dataset helpers (alphabetically) #
 
 
+def cats_dataset(data_dir="data/", keep_download=False,
+                 overwrite_download=False, verbose=False, info_only=False):
+    """ Download the cats_dataset dataset
+    more info: https://web.archive.org/web/20150703060412/http://137.189.35.203/WebUI/CatDatabase/catData.html"""
+    if info_only:
+        print(""" Download the cats_dataset dataset
+                 more info: https://web.archive.org/web/20150703060412/http://137.189.35.203/WebUI/CatDatabase/catData.html""")
+    else:
+        download("https://web.archive.org/web/20150703060412/http://137.189.35.203/WebUI/CatDatabase/Data/CAT_DATASET_02.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://web.archive.org/web/20150703060412/http://137.189.35.203/WebUI/CatDatabase/Data/CAT_DATASET_01.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def cifar_100_matlab(data_dir="data/", keep_download=False,
                      overwrite_download=False, verbose=False, info_only=False):
     """ Download the cifar_100_matlab dataset
@@ -142,6 +156,18 @@ def dogscats(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def glove_6b(data_dir="data/", keep_download=False,
+             overwrite_download=False, verbose=False, info_only=False):
+    """ Download the glove_6b dataset
+    more info: """
+    if info_only:
+        print(""" Download the glove_6b dataset
+                 more info: """)
+    else:
+        download("http://nlp.stanford.edu/data/glove.6B.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def gsvh_cropped(data_dir="data/", keep_download=False,
                  overwrite_download=False, verbose=False, info_only=False):
     """ Download the gsvh_cropped dataset
@@ -171,6 +197,42 @@ def gsvh_full(data_dir="data/", keep_download=False,
         download("http://ufldl.stanford.edu/housenumbers/test.tar.gz",
                  data_dir, keep_download, overwrite_download, verbose)
         download("http://ufldl.stanford.edu/housenumbers/train.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def imagenette_160(data_dir="data/", keep_download=False,
+                   overwrite_download=False, verbose=False, info_only=False):
+    """ Download the imagenette_160 dataset
+    more info: https://github.com/fastai/imagenette"""
+    if info_only:
+        print(""" Download the imagenette_160 dataset
+                 more info: https://github.com/fastai/imagenette""")
+    else:
+        download("https://s3.amazonaws.com/fast-ai-imageclas/imagenette-160.tgz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def imagenette_320(data_dir="data/", keep_download=False,
+                   overwrite_download=False, verbose=False, info_only=False):
+    """ Download the imagenette_320 dataset
+    more info: https://github.com/fastai/imagenette"""
+    if info_only:
+        print(""" Download the imagenette_320 dataset
+                 more info: https://github.com/fastai/imagenette""")
+    else:
+        download("https://s3.amazonaws.com/fast-ai-imageclas/imagenette-320.tgz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def imagenette_full(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the imagenette_full dataset
+    more info: https://github.com/fastai/imagenette"""
+    if info_only:
+        print(""" Download the imagenette_full dataset
+                 more info: https://github.com/fastai/imagenette""")
+    else:
+        download("https://s3.amazonaws.com/fast-ai-imageclas/imagenette.tgz",
                  data_dir, keep_download, overwrite_download, verbose)
 
 
@@ -314,6 +376,20 @@ def open_images_dataset_v4(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def oxford_iiit_pet(data_dir="data/", keep_download=False,
+                    overwrite_download=False, verbose=False, info_only=False):
+    """ Download the oxford_iiit_pet dataset
+    more info: http://www.robots.ox.ac.uk/~vgg/data/pets/"""
+    if info_only:
+        print(""" Download the oxford_iiit_pet dataset
+                 more info: http://www.robots.ox.ac.uk/~vgg/data/pets/""")
+    else:
+        download("http://www.robots.ox.ac.uk/~vgg/data/pets/data/annotations.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("http://www.robots.ox.ac.uk/~vgg/data/pets/data/images.tar.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def pascal_voc_2007(data_dir="data/", keep_download=False,
                     overwrite_download=False, verbose=False, info_only=False):
     """ Download the pascal_voc_2007 dataset
@@ -379,6 +455,142 @@ def standford_squad(data_dir="data/", keep_download=False,
         download("https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
                  data_dir, keep_download, overwrite_download, verbose)
         download("https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_1(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_1 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_1 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.51-100.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.1-50.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_2(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_2 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_2 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.101-150.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_3(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_3 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_3 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.151-200.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_4(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_4 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_4 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.201-250.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.trec4.routing.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_5(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_5 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_5 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.251-300.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.interactive.trec5.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.trec5.routing.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.confusion.cf1-cf50.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_6(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_6 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_6 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.301-350.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/trec6.routing.topics.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.SDR1-SDR50.trec6.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/answers.SDR1-SDR50.trec6.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_7(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_7 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_7 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.351-400.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/trec7.sdr.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_8(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_8 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_8 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/topics.401-450.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.qa_questions.txt",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("ftp://jaguar.ncsl.nist.gov/sdr99/SDR99-topics.sgml",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def trec_9(data_dir="data/", keep_download=False,
+           overwrite_download=False, verbose=False, info_only=False):
+    """ Download the trec_9 dataset
+    more info: https://trec.nist.gov/data/topics_eng/"""
+    if info_only:
+        print(""" Download the trec_9 dataset
+                 more info: https://trec.nist.gov/data/topics_eng/""")
+    else:
+        download("https://trec.nist.gov/data/topics_eng/qa_questions_201-893",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/variants.qnumbers",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/topics.451-500.gz",
+                 data_dir, keep_download, overwrite_download, verbose)
+        download("https://trec.nist.gov/data/topics_eng/variants.qnumbers",
                  data_dir, keep_download, overwrite_download, verbose)
 
 

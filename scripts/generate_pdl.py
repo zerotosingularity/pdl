@@ -102,6 +102,8 @@ def generate():
             if new_method:
                 method_name = tag
 
+                print(f"print(\"[Downloading: {method_name}\")")
+                print("pdl." + method_name + "(verbose=True)")
                 parameters = dict(
                     method_name=method_name.replace("-", "_"),
                     page_url=page_url,
