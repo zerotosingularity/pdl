@@ -1,6 +1,6 @@
 # Disclaimer: beta version
 
-# PDL - Python Download Library
+# PDL - Public Download Library
 
 High level library for:
 * download and unarchiving,
