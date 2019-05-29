@@ -612,6 +612,30 @@ def twenty_newsgroups(data_dir="data/", keep_download=False,
                  data_dir, keep_download, overwrite_download, verbose)
 
 
+def uecfood_100(data_dir="data/", keep_download=False,
+                overwrite_download=False, verbose=False, info_only=False):
+    """ Download the uecfood_100 dataset
+    more info: http://foodcam.mobi/dataset100.html"""
+    if info_only:
+        print(""" Download the uecfood_100 dataset
+                 more info: http://foodcam.mobi/dataset100.html""")
+    else:
+        download("http://foodcam.mobi/dataset100.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
+def uecfood_256(data_dir="data/", keep_download=False,
+                overwrite_download=False, verbose=False, info_only=False):
+    """ Download the uecfood_256 dataset
+    more info: http://foodcam.mobi/dataset256.html"""
+    if info_only:
+        print(""" Download the uecfood_256 dataset
+                 more info: http://foodcam.mobi/dataset256.html""")
+    else:
+        download("http://foodcam.mobi/dataset256.zip",
+                 data_dir, keep_download, overwrite_download, verbose)
+
+
 def vqa_2015(data_dir="data/", keep_download=False,
              overwrite_download=False, verbose=False, info_only=False):
     """ Download the vqa_2015 dataset

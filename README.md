@@ -131,6 +131,8 @@ For more details on pytest: [Getting started with pytest](https://docs.pytest.or
 * [trec-8](https://trec.nist.gov/data/topics_eng/)
 * [trec-9](https://trec.nist.gov/data/topics_eng/)
 * [twenty-newsgroups](https://archive.ics.uci.edu/ml/machine-learning-databases/20newsgroups-mld/)
+* [uecfood-100](http://foodcam.mobi/dataset100.html)
+* [uecfood-256](http://foodcam.mobi/dataset256.html)
 * [vqa-2015](http://www.visualqa.org/download.html)
 * [vqa-2016](http://www.visualqa.org/download.html)
 * [vqa-2017](http://www.visualqa.org/download.html)
