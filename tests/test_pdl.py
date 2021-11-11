@@ -126,7 +126,9 @@ def pdl_test_helper(url, archive=True):
 
     if archive:
         assert not os.path.exists(file_location)
-
+    else:
+        os.unlink(file_location)
+        
 
 def stop_server():
     """ Stop HTTP server """
