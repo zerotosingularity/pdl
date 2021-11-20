@@ -34,14 +34,12 @@ httpd = http.server.HTTPServer(
 # pylint: disable=C0103
 thread = threading.Thread(target=httpd.serve_forever)
 
-
 def setup_module(module):
     # pylint: disable=W0612,W0613
     """ Setup function for test framework """
 
     print("setting up module")
     thread.start()
-
 
 def teardown_module(module):
     # pylint: disable=W0612,W0613
@@ -53,53 +51,44 @@ def teardown_module(module):
     print(os.getcwd())
     shutil.rmtree(DATA_DIR)
 
-
 def test_zip_download():
     """ Test zip downlaod """
 
     pdl_test_helper(ZIP_URL)
-
 
 def test_tar_gz_download():
     """ Test .tar.gz download """
 
     pdl_test_helper(TAR_GZ_URL)
 
-
 def test_tar_download():
     """ Test tar download """
 
     pdl_test_helper(TAR_URL)
-
 
 def test_tgz_download():
     """ Test .tgz download """
 
     pdl_test_helper(TGZ_URL)
 
-
 def test_gz_download():
     """ Test .gz download """
 
     pdl_test_helper(GZ_URL)
-
 
 def test_empty_url():
     """ Test an empty url """
     with pytest.raises(Exception):
         pdl_test_helper(EMPTY_URL)
 
-
 def test_no_file_url():
     """ Test a url without a file """
     with pytest.raises(Exception):
         pdl_test_helper(URL_WITHOUT_FILE)
 
-
 def test_no_archive_url():
     """ Test a non-archive url """
     pdl_test_helper(NON_ARCHIVE_URL, False)
-
 
 @pytest.mark.skip(reason="only used for attribute error fixing")
 def test_movie_lens_latest():
@@ -108,7 +97,6 @@ def test_movie_lens_latest():
         pdl.movie_lens_latest()
     except AttributeError:
         pytest.fail("Unexpected error")
-
 
 def pdl_test_helper(url, archive=True):
     """ Test for PDL """
@@ -128,7 +116,6 @@ def pdl_test_helper(url, archive=True):
         assert not os.path.exists(file_location)
     else:
         os.unlink(file_location)
-        
 
 def stop_server():
     """ Stop HTTP server """
