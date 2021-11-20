@@ -104,7 +104,6 @@ def pdl_test_helper(url, archive=True):
     filename = pdl.get_filename(url)
     file_location = pdl.get_file_location(DATA_DIR, filename)
 
-    print(file_location)
     assert not os.path.exists(file_location)
     pdl.download(url, DATA_DIR)
 
