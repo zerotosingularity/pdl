@@ -4,7 +4,8 @@
 
 if [ $? -eq 0 ]
 then
-  python setup.py sdist upload
+  python3 setup.py sdist bdist_wheel
+  twine upload dist/*  --skip-existing
 else
   echo "Unbale to deploy because tests are failing"
   exit -1
