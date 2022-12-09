@@ -1,2 +1,4 @@
 """ set up pdl module """
-from pdl import pdl
+from .pdl import *
+
+from .version import __version__
