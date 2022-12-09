@@ -7,7 +7,7 @@ import os
 import shutil
 import pytest
 
-from pdl import pdl
+import pdl
 
 DATA_DIR = "data/"
 TEST_FILE = "1_hello_tensorflow.py"
@@ -115,6 +115,21 @@ def pdl_test_helper(url, archive=True):
         assert not os.path.exists(file_location)
     else:
         os.unlink(file_location)
+
+def test_get_file_location():
+    base_dir = "some_dir/"
+    filename = "some_filename"
+
+    expected_file_location = "some_dir/some_filename"
+
+    assert pdl.get_file_location(base_dir, filename), expected_file_location
+
+    base_dir_without_slash = "some_dir"
+
+    assert pdl.get_file_location(base_dir, filename), expected_file_location
+
+def test_version():
+    assert pdl.__version__
 
 def stop_server():
     """ Stop HTTP server """
