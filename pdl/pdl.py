@@ -902,4 +902,4 @@ def get_filename(url):
 
 def get_file_location(data_dir, filename):
     """ Concat data_dir and filename """
-    return data_dir + filename
+    return os.path.join(data_dir, filename)
